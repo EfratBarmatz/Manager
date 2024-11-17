@@ -54,6 +54,7 @@ namespace Manager
                 string res= Console.ReadLine();
                 if (res == "y")
                     InsertProduct(connaction);
+                
                 return rowAffected;
             }
             

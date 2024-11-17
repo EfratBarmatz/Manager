@@ -14,7 +14,7 @@ namespace Manager
 
             Products pr = new Products();
 
-            pr.InsertProduct(connaction); 
+            Console.WriteLine( pr.InsertProduct(connaction)+"row insert" );
             pr.getAllProducts(connaction);
         }
     }
