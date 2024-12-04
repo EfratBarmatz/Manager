@@ -87,5 +87,39 @@ namespace Manager
                 Console.ReadLine();
             }
         }
+
+        public int InsertCategory(string connaction)
+        {
+            int categoryId;
+
+            string name;       
+
+            Console.WriteLine("please enter product name");
+            name = Console.ReadLine();
+
+
+            string query = "INSERT INTO Categories (CategoryName)" +"VALUES (@CategoryName)";
+
+            using (SqlConnection cn = new SqlConnection(connaction))
+            using (SqlCommand cmd = new SqlCommand(query, cn))
+            {
+                cmd.Parameters.Add("@CategoryName", SqlDbType.NChar, 20).Value = name;
+                
+
+                cn.Open();
+                int rowAffected = cmd.ExecuteNonQuery();
+                cn.Close();
+
+                Console.WriteLine("you want mor? y/n");
+                string res = Console.ReadLine();
+                if (res == "y")
+                    InsertCategory(connaction);
+
+                return rowAffected;
+            }
+
+
+
+        }
     }
 }
