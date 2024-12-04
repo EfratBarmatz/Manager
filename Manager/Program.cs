@@ -14,10 +14,10 @@ namespace Manager
 
             Products pr = new Products();
 
-            //Console.WriteLine( pr.InsertProduct(connaction)+"row insert" );
-            // pr.getAllProducts(connaction);
+            Console.WriteLine( pr.InsertProduct(connaction)+"row insert" );
+            pr.getAllProducts(connaction);
 
-            Console.WriteLine(pr.InsertCategory(connaction));
+            //Console.WriteLine(pr.InsertCategory(connaction));
         }
     }
 }
